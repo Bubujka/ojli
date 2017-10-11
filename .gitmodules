@@ -1,0 +1,6 @@
+[submodule "bu.defun"]
+	path = bu.defun
+	url = git@github.com:Bubujka/bu.defun.git
+[submodule "bu.common.php"]
+	path = bu.common.php
+	url = git@github.com:Bubujka/bu.common.php.git

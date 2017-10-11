@@ -1,0 +1,19 @@
+#!/usr/bin/php
+<?php
+define('KEY', '3ae9bbb8796112def8c502e24c388a81');
+define('OJLI_DIR', '/home/bubujka/.ojli');
+define('OJLI_SERVER', 'ojli.org');
+
+foreach(glob(OJLI_DIR.'/*') as $file){
+  $url = 'http://'.OJLI_SERVER.'/api_new_card';
+  $data = array(
+    'text' => file_get_contents($file),
+    'key'=>KEY);
+
+  $options = array('http' => array('method'  => 'POST','content' => http_build_query($data)));
+  $context  = stream_context_create($options);
+  $result = @file_get_contents($url, false, $context);
+  if(trim($result) == 'true')
+    unlink($file);
+}
+

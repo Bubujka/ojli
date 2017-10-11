@@ -1,0 +1,42 @@
+!!!5
+%html
+  %head
+    %meta(charset="utf-8")
+    %link(rel="stylesheet" href="/public/css/bootstrap.css")/
+    %link(rel="stylesheet" href="/public/css/bootstrap-responsive.css")/ 
+    %link(rel="stylesheet" href="/public/css/style.css")/
+    %script(src="/public/js/jquery.js")
+    %script(src="/public/js/bootstrap.js")
+    %script(src="/public/js/hotkey.js")
+    %script(src="/public/js/modes.js")
+    %script(src="/public/js/sanctuary.js")
+    %script(src="/public/js/adder.js")
+    %script(src="/public/js/global_keys.js")
+    %script(src="/public/js/editor.js")
+    %script(src="/public/js/script.js")
+    %script(src="/public/js/friends.js")
+    %script(src="/public/js/today.js")
+    %script(src="/public/js/cards.js")
+    %script(src="/public/js/blog.js")
+    %script(src="/public/js/pages.js")
+    %script(src="/js_fns")
+    %title
+      =title()
+  %body
+    .container-narrow
+
+      .reread
+        ololo
+      .masthead
+        =menu()
+        %h3.muted
+          Ojli.org -
+          %span.title
+      %hr/
+
+      =$data
+      .footer.navbar.navbar-fixed-bottom.center
+        %p
+          &&copy;
+          %a(href="mailto:zendzirou@gmail.com")
+            zendzirou@gmail.com

@@ -1,0 +1,44 @@
+.card.full(class="#{card_friend_class($data)} #{is_card_done($data) ? 'done': ''}")
+  .text
+    %pre
+      =h($data['text'])
+  .history.hidden
+    -if(isset($data['text-log']))
+      -foreach(array_reverse($data['text-log']) as $v)
+        .itm 
+          -if(isset($v['nick']))
+            %b
+              =$v['nick']
+          %i
+            =relative_time($v['date']->sec).': '
+          %pre
+            =h($v['text'])
+    -else
+      .empty
+        Нет истории изменений...
+  .info
+    -foreach(['dir'] as $t)
+      -if(isset($data[$t]))
+        .dir
+          Каталог: 
+          %i 
+            =$data[$t]
+    .added
+      Создано:
+      %i
+        =relative_time($data['added']->sec)
+    -if(isset($data['updated']))
+      .updated
+        Отредактировано:
+        %i
+          =relative_time($data['updated']->sec)
+    .watches
+      Просмотров: 
+      %i
+        =$data['watches']
+    -if(isset($data['edits']))
+      .edits
+        Редактирований: 
+        %i
+          =$data['edits']
+

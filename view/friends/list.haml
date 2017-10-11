@@ -1,0 +1,8 @@
+-$u = current_user()
+-if(isset($u['friends']) and $u['friends'])
+  -foreach($u['friends'] as $t)
+    =dview('user/short', user_by_id($t['_id']))
+-else
+  .empty
+    Друзей нет =(
+

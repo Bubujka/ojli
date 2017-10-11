@@ -1,0 +1,11 @@
+-if($data)
+  %i
+    Карточек 
+      -foreach(stat_types() as $key=>$name)
+        -if(isset($data[$key]))
+          =' '.$name.': '
+          %b 
+            =$data[$key]
+-else
+  Нет статистики за этот день
+%hr

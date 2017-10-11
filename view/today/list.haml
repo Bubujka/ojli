@@ -1,0 +1,16 @@
+-if($data and have_cards_in_today($data))
+  -foreach($data['tasks-open'] as $v)
+    -$c = card($v)
+    =dview('card/short', $c)
+  -if(isset($data['tasks-done']))
+    %b
+      Выполнено: 
+    -foreach($data['tasks-done'] as $v)
+      -$c = card($v)
+      =dview('card/short', $c)
+-else
+  %h3
+    На сегодня ничего не решено, что предстоит сделать.
+  %h4
+    Нажми <kbd>Enter</kbd> чтобы составить такой список.
+
